@@ -1,0 +1,27 @@
+<%include partials/header%>
+<div class="container">
+<header class="jumbotron">
+   <div class="container">
+    <div style="font-weight:500;margin-bottom:20px;font-size:50px;" class="text-center"><span style="background-color:crimson;color:whitesmoke;padding:10px;">বসিরহাট</span><span style="background-color:#2d2d2d;color:whitesmoke;padding:10px;">কথা</span></div>
+       <p class="text-center" style="font-weight:600;color:dimgray;font-size:25px;">বসিরহাটের নিজের সংবাদপত্র বসিরহাট কথা এখন অনলাইন, বসিরহাট কথা ওয়েবসাইট এর মাধ্যমে বসিরহাটের সমস্ত খবর জেনে নিন মুহূর্তের মধ্যে</p>
+    </div>
+</header>
+<div class="row" style="display: flex;flex-wrap:wrap;">
+<%for(var i=articles.length - 1;i>=0;i--){%>
+    <div class="col-md-3 col-sm-6">
+        <div class="thumbnail" style="padding:0px;">
+            <img src="<%=articles[i].image%>">
+            <div class="caption">
+                <h3><a id="indextitle" href="/news/<%=articles[i]._id%>"><%=articles[i].title%></a></h3>
+                <p id="date"><%=articles[i].created.toDateString()%></p>
+                <p style="font-size:18px;font-weight:600;color:dimgray;"><%=articles[i].body.substring(0 , 160)%>...</p>
+            </div>
+            <p class="text-center">
+                <a href="/news/<%=articles[i]._id%>" id="button" class="btn btn-primary btn-lg">খবর পড়ুন</a>
+            </p>
+        </div>
+    </div>
+    <%};%>
+</div>
+</div>
+<%include partials/footer%>

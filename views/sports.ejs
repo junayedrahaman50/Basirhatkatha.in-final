@@ -1,0 +1,23 @@
+<%include partials/header%>
+<div class="container">
+    <h1 class="todayheader">খেলা</h1>
+    <hr>
+<div class="row" style="display: flex;flex-wrap:wrap;">
+<%for(var i=sportsNews.length - 1;i>=0;i--){%>
+    <div class="col-md-3 col-sm-6">
+        <div class="thumbnail" style="padding:0px;">
+            <img src="<%=sportsNews[i].image%>">
+            <div class="caption">
+                <h3 style="font-size:26px;font-weight:600;color:#454545;"><a id="indextitle" href="/news/<%=sportsNews[i]._id%>"><%=sportsNews[i].title%></a></h3>
+                <p id="date"><%=sportsNews[i].created.toDateString()%></p>
+                <p style="font-size:18px;font-weight:600;color:dimgray;"><%=sportsNews[i].body.substring(0 , 160)%>...</p>
+            </div>
+            <p class="text-center">
+                <a href="/news/<%=sportsNews[i]._id%>" id="button" class="btn btn-primary btn-lg">খবর পড়ুন</a>
+            </p>
+        </div>
+    </div>
+    <%};%>
+</div>
+</div>
+<%include partials/footer%>

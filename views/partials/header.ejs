@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta charset="UTF-8">
+    <title>Basirhatkatha</title>
+     <link rel="icon" type="image/png" href="/basirhatkathalogo.png" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<!--<link href="https://fonts.maateen.me/adorsho-lipi/font.css" rel="stylesheet">-->
+   <link href="https://fonts.googleapis.com/css?family=Carter+One|Source+Sans+Pro" rel="stylesheet">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+ <nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+            <a id="brand" class="navbar-brand" href="/">বসিরহাট কথা</a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+            <li><a class="link" href="/news/selected">বাছাই খবর</a></li>
+            <li><a class="link" href="/news/entertainment">বিনোদন</a></li>
+            <li><a class="link" href="/news/sports">খেলা</a></li>
+            <li><a class="link" href="/news/ocassion">অনুষ্ঠান</a></li>
+            <%if(currentUser){%>
+            <li><a class="link" href="/logout">লগ আউট</a></li>
+            <%}%>
+            </ul>
+                 <div class="nav navbar-right">
+            <button style="margin-right:5px;" type="button" class="btn btn-primary navbar-btn"><a style="color:white;" href="https://www.facebook.com/sharer/sharer.php?u=https://basirhatkatha.in/" target="_blank"><i class="fab fa-facebook"></i></a></button>
+            <button style="margin-right:5px;" type="button" class="btn btn-primary navbar-btn"><a style="color:white;" href="whatsapp://send?text=https://basirhatkatha.in/" data-action="share/whatsapp/share"><i class="fab fa-whatsapp"></i></a></button> 
+           <button type="button" class="btn btn-primary navbar-btn"><a style="color:white;" class="twitter-share-button"
+  href="https://twitter.com/intent/tweet?text=https://basirhatkatha.in/"
+  data-size="large"><i class="fab fa-twitter"></i></a></button> 
+        </div>
+        </div>
+    </div>
+</nav>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+           <%if(error && error.length>0){%>
+            <div class="alert alert-danger alert-dismissible fade in text-center" role="alert">
+                <h4><%=error%></h4>
+            </div>
+            <%}%>
+            <%if(success && success.length>0){%>
+            <div class="alert alert-success alert-dismissible fade in text-center" role="alert">
+                <h4><%=success%></h4>
+            </div>
+            <%}%>
+        </div>
+  </div>
+</div>

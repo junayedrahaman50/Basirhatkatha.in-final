@@ -1,0 +1,24 @@
+<%include partials/header%>
+<div class="container">
+      <div class="row">
+      <div class="col-md-8 col-centered">
+       <div class="thumbnail" style="padding:0px;">
+        <img style="width:100%;" class="img-responsive" src="<%=foundArticle.image%>"> 
+        <div class="caption" style="padding:12px;">   
+        <h1 style="font-weight:600;color:#454545;"><%=foundArticle.title%></h1>
+        <p id="date"> <%=foundArticle.created.toDateString()%>  </p>
+        <p style="font-size:22px;font-weight:600;color:dimgray;"><%=foundArticle.body%></p>
+        <p style="font-size:22px;font-weight:600;color:#454545;text-align:right;">- <%=foundArticle.Author%></p>
+        <%if(currentUser){%>
+        <a class="btn btn-primary" href="/news/<%=foundArticle._id%>/editbyadmin">EDIT</a>
+        <form id="delete" action="/news/<%=foundArticle._id%>/deletebyadmin?_method=DELETE" method="POST">
+            <button class="btn btn-primary">DELETE</button>
+        </form>
+        <%}%>
+        </div> 
+        </div>
+        </div>
+        </div>
+        </div>
+
+<%include partials/footer%>

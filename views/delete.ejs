@@ -1,0 +1,18 @@
+ <%include partials/header%>
+<div class="container">
+      <div class="row">
+      <div class="col-md-8 col-centered">
+       <div class="thumbnail" style="padding:0px;">
+        <img style="width:100%;" class="img-responsive" src="<%=deleteOne.image%>"> 
+        <div class="caption-full" style="padding:12px;">   
+        <h1 style="font-weight:600;"><%=deleteOne.title%></h1>
+        <p style="font-size:22px;font-weight:600;color:dimgray;"><%-deleteOne.body%></p>
+        <form id="delete" action="/news/<%=deleteOne._id%>/deletebyadmin?_method=DELETE" method="POST">
+            <button style="margin-bottom:10px;" class="btn btn-primary btn-lg">ডিলিট করুন</button>
+        </form>
+        </div> 
+        </div>
+        </div>
+        </div>
+        </div>
+<%include partials/footer%>
